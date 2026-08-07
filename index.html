@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <!-- Bootstrap / CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top" id="main-nav">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/Reverie_Logo.png" alt="Logo" width="70" height="50" class="d-inline-block align-text-top ps-2">  
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link " aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <!-- Background Video-->
+        <div>
+            <video autoplay muted loop playsinline id="bg-movie">
+                <source src="videos/cinematic_watch_vid.mp4" type="video/mp4">
+            </video>
+
+        
+                <div class="overlay-content">
+                    <h1>REVERIE</h1>
+                    <p>Timeless, by design.</p>
+                </div>
+        </div>
+    </section>
+
+    <section class="feature-section">
+        <div class="container">
+            <h2 class="feature-section-title">SIGNATURE COLLECTION</h2>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="carousel-wrapper">
+
+                        <button id="prev">&#10094;</button>
+
+                        <div class="carousel"></div>
+
+                        <button id="next">&#10095;</button>
+
+                    </div>
+                </div>
+                <div class="description_container">
+                    <h2 id="title" class="text-white"></h2>
+
+                    <p id="desc" class="text-white"></p>
+
+                    <a href="#" class="btn shop_now">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brand-section">
+
+        <div class="container">
+            <video autoplay muted loop playsinline id="brand-movie">
+                <source src="videos/brand_vid.mp4" type="video/mp4">
+            </video>
+
+            <div class="brand-overlay">
+                <p class="section_title">ABOUT</p>
+
+                <p>We didn't set out to make watches.</p>
+
+                <p>We set out to make time feel like it mattered.
+
+            1   REVERIE is for the ones who dream in detail</p>
+
+                <p>who believe style is discipline, and time is the only luxury that can't be bought back.</p>
+
+                <p class="brand-tagline">Chasing dreams. Creating style. One second at a time.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-section">
+        <div class="container">
+            <h2 class="product-section-title">PRODUCTS</h2>
+
+            <div class="row product-row">
+                <div class="col-6 col-md-3">
+                    <div class="product-card">
+                        <img src="images/product/watch_catalog/JOWISA_black-silver.png" alt="Product name" class="product-img">
+                        <h3 class="product-title">JOWISSA OCTA 6</h3>
+                        <p class="product-price">₱35,000.99</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card">
+                        <img src="images/product/watch_catalog/JOWISSA black.jpg" alt="Product name" class="product-img">
+                        <h3 class="product-title">JOWISSA OCTA 3 - SILVER</h3>
+                        <p class="product-price">₱20,499.99</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card">
+                        <img src="images/product/watch_catalog/JOWISA_green.png" alt="Product name" class="product-img">
+                        <h3 class="product-title">JOWISSA OCTA 3 - GREEN</h3>
+                        <p class="product-price">₱20,499.99</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="product-card">
+                        <img src="images/product/watch_catalog/JOWISSA_blue.png" alt="Product name" class="product-img">
+                        <h3 class="product-title">JOWISSA OCTA 3 - BLUE</h3>
+                        <p class="product-price">₱24,999.99</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="see-more-wrapper">
+                <a href="#" class="btn see-more-btn">See More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="details">
+      <h2 class="details-title">The Details Matter</h2>
+
+      <div class="details-inner">
+        <div class="corner-text corner-top-left">
+            <i class="bi bi-gear corner-icon"></i>
+            <h4 class="corner-title">Precision Movement</h4>
+            <p class="corner-desc">Swiss-quartz mechanism, accurate to the second.</p>
+        </div>
+
+        <div class="corner-text corner-top-right">
+            <i class="bi bi-gem corner-icon"></i>
+            <h4 class="corner-title">Sapphire Crystal</h4>
+            <p class="corner-desc">Scratch-resistant glass that ages with grace, not wear.</p>
+        </div>
+
+        <div class="clock-wrapper">
+            <div class="analog-clock">
+                <div class="clock-face" id="clock-face">
+                    <div class="hand hour-hand" id="hour-hand"></div>
+                    <div class="hand minute-hand" id="minute-hand"></div>
+                    <div class="hand second-hand" id="second-hand"></div>
+                    <div class="clock-center-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="corner-text corner-bottom-left">
+            <i class="bi bi-droplet corner-icon"></i>
+            <h4 class="corner-title">100M Water Resistant</h4>
+            <p class="corner-desc">Built for the ocean, the office, and everywhere between.</p>
+        </div>
+
+        <div class="corner-text corner-bottom-right">
+            <i class="bi bi-award corner-icon"></i>
+            <h4 class="corner-title">5-Year Warranty</h4>
+            <p class="corner-desc">We stand behind every second we sell.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="review_section">
+        <div class="container">
+            <h2 class="review-section-title">WHAT OUR CUSTOMERS SAY</h2>
+
+            <div class="row review-row">
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-quote">"The craftsmanship is unreal. It feels like I'm wearing a piece of art, not just a watch."</p>
+                        <p class="review-name">Sarah M.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-quote">"Ordered on a whim, kept it forever. Compliments every single time I wear it."</p>
+                        <p class="review-name">James R.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-quote">"Exactly what timeless means. Simple, weighty, and it still keeps perfect time."</p>
+                        <p class="review-name">Alyssa T.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-quote">"Gifted this to myself after a hard year. Every time I check the time, it feels like a small reminder to slow down."</p>
+                        <p class="review-name">Marcus D.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-quote">"Sleek without trying too hard. I get asked about it constantly, and it still looks brand new."</p>
+                        <p class="review-name">Priya K.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="review-card">
+                        <div class="review-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="review-quote">"Packaging alone felt premium, and the watch has more than lived up to it. Worth every peso."</p>
+                        <p class="review-name">Daniel V.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <video autoplay muted loop playsinline id="newsletter-movie">
+            <source src="videos/walking_people.mp4" type="video/mp4">
+        </video>
+        <div class="newsletter-overlay"></div>
+
+        <div class="container">
+            <h2 class="newsletter-title">JOIN THE REVERIE CIRCLE</h2>
+            <p class="newsletter-subtext">Be the first to know about new releases, limited editions, and exclusive offers.</p>
+
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+                <button type="submit" class="btn newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand-col">
+                    <div class="footer-brand">
+                        <img src="images/Reverie_Logo.png" alt="Reverie" class="footer-logo">
+                        <span>REVERIE</span>
+                    </div>
+
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="footer-col-title">Shop</h5>
+                    <a href="#">All Watches</a>
+                    <a href="#">Signature Collection</a>
+                    <a href="#">New Arrivals</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="footer-col-title">About</h5>
+                    <a href="#">Our Story</a>
+                    <a href="#">Craftsmanship</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="footer-col-title">Contact</h5>
+                    <a href="mailto:hello@reverie.com">hello@reverie.com</a>
+                    <a href="#">Support</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5 class="footer-col-title">Shipping &amp; Returns</h5>
+                    <a href="#">Shipping Policy</a>
+                    <a href="#">Returns &amp; Exchanges</a>
+                    <a href="#">Warranty</a>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <p class="footer-copyright">&copy; 2026 REVERIE. All rights reserved.</p>
+        </div>
+    </footer>
+
+<script src="js/watches.js"></script>
+<script src="js/script.js"></script>
+<script>
+
+    
+    const bgMovie = document.getElementById('bg-movie');
+
+    const heroSection = document.querySelector('.hero-section');
+
+    const brandMovie = document.getElementById('brand-movie');
+    const brandSection = document.querySelector('.brand-section');
+
+    const mainNav = document.getElementById('main-nav');
+    const productSection = document.querySelector('.product-section');
+    const reviewSection = document.querySelector('.review_section');
+
+    const detailsSection = document.querySelector('.details');
+    const clockFace = document.getElementById('clock-face');
+
+    const newsletterMovie = document.getElementById('newsletter-movie');
+    const newsletterSection = document.querySelector('.newsletter-section');
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const heroHeight = heroSection.offsetHeight;
+
+        // black navbar only while the product or review sections are behind it
+        const navHeight = mainNav.offsetHeight;
+        const productRect = productSection.getBoundingClientRect();
+        const reviewRect = reviewSection.getBoundingClientRect();
+        const overProduct = productRect.top <= navHeight && productRect.bottom > 0;
+        const overReview = reviewRect.top <= navHeight && reviewRect.bottom > 0;
+
+        if (overProduct || overReview) {
+            mainNav.classList.remove('navbar-dark', 'bg-transparent');
+            mainNav.classList.add('navbar-dark', 'bg-black');
+        } else {
+            mainNav.classList.remove('navbar-dark', 'bg-black');
+            mainNav.classList.add('navbar-dark', 'bg-transparent');
+        }
+
+        // only run the effect while the hero is in view (perf + avoids drift)
+        if (scrollY < heroHeight) {
+            const speed = 0.4; // lower = slower/more subtle parallax
+            bgMovie.style.transform = `translateY(${scrollY * speed}px)`;
+        }
+
+        const rect = brandSection.getBoundingClientRect();
+
+        // only run while the brand section is at least partly on screen
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+            const scrollableDistance = window.innerHeight + rect.height;
+            const progress = (window.innerHeight - rect.top) / scrollableDistance; // 0 -> 1 as it scrolls through
+            const maxShift = rect.height * 0.50; // matches the 130% height buffer on #brand-movie
+            const offset = (progress - 0.5) * 2 * maxShift;
+            brandMovie.style.transform = `translateY(${offset}px)`;
+        }
+
+        const detailsRect = detailsSection.getBoundingClientRect();
+
+        // subtle parallax drift on the clock face as the details section scrolls through
+        if (detailsRect.bottom > 0 && detailsRect.top < window.innerHeight) {
+            const scrollableDistance = window.innerHeight + detailsRect.height;
+            const progress = (window.innerHeight - detailsRect.top) / scrollableDistance;
+            const shift = (progress - 0.5) * 60;
+            clockFace.style.transform = `translateY(${shift}px)`;
+        }
+
+        const newsletterRect = newsletterSection.getBoundingClientRect();
+
+        // only run while the newsletter section is at least partly on screen
+        if (newsletterRect.bottom > 0 && newsletterRect.top < window.innerHeight) {
+            const scrollableDistance = window.innerHeight + newsletterRect.height;
+            const progress = (window.innerHeight - newsletterRect.top) / scrollableDistance;
+            const maxShift = newsletterRect.height * 0.30; // matches the 160% height buffer on #newsletter-movie
+            const offset = (progress - 0.5) * 2 * maxShift;
+            newsletterMovie.style.transform = `translateY(${offset}px)`;
+        }
+    });
+
+    const revealElements = document.querySelectorAll('.product-card, .product-section-title, .details-title, .corner-text, .clock-wrapper, .review-card, .review-section-title');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle('in-view', entry.isIntersecting);
+        });
+    }, { threshold: 0.2 });
+
+    revealElements.forEach((el) => revealObserver.observe(el));
+
+    // Analog clock: 12 hour markers + hands that track real time
+    for (let i = 0; i < 12; i++) {
+        const marker = document.createElement('div');
+        marker.className = i % 3 === 0 ? 'clock-marker major' : 'clock-marker';
+        marker.style.transform = `rotate(${i * 30}deg)`;
+        clockFace.appendChild(marker);
+    }
+
+    const hourHand = document.getElementById('hour-hand');
+    const minuteHand = document.getElementById('minute-hand');
+    const secondHand = document.getElementById('second-hand');
+
+    function updateClock() {
+        const now = new Date();
+        const hours = now.getHours() % 12;
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        hourHand.style.transform = `rotate(${hours * 30 + minutes * 0.5}deg)`;
+        minuteHand.style.transform = `rotate(${minutes * 6 + seconds * 0.1}deg)`;
+        secondHand.style.transform = `rotate(${seconds * 6}deg)`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    const newsletterForm = document.querySelector('.newsletter-form');
+
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const btn = newsletterForm.querySelector('.newsletter-btn');
+        const originalText = btn.textContent;
+
+        btn.textContent = 'Subscribed!';
+        newsletterForm.reset();
+
+        setTimeout(() => { btn.textContent = originalText; }, 2500);
+    });
+
+</script>
+</body>
+</html>

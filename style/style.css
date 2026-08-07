@@ -1,0 +1,945 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar layout: keep brand and links vertically centered */
+.navbar {
+    padding: 0.5rem 1.25rem;
+    min-height: 70px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    padding: 0;
+}
+
+.navbar-brand img {
+    display: block;
+    height: 48px;
+    width: auto;
+    margin: 0;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    padding-left: 0;
+}
+
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+@media (min-width: 0px) {
+
+    .navbar-collapse {
+        display: flex !important;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
+
+}
+.hero-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden; /* keeps the oversized video from spilling out */
+}
+
+#bg-movie {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 130%; /* taller than container so it has room to shift */
+    object-fit: cover;
+    z-index: -1;
+    will-change: transform; /* smoother animation */
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Michroma", sans-serif;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    
+}
+
+.overlay-content h1 {
+    font-family: "Michroma", sans-serif;
+    font-size: 4rem;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+    
+    
+}
+
+.overlay-content p {
+    font-family: "Michroma", sans-serif;
+    font-size: 1.5rem;
+}
+
+.feature-section {
+    position: relative;
+    background-color: #050505;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.feature-section .row {
+    align-items: center;
+    row-gap: 3rem;
+}
+
+.feature-section-title {
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin: 0;
+
+    font-family: "Michroma", sans-serif;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.25em;
+}
+
+
+
+.carousel {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    max-width: 100%;
+    margin-top: -150px;
+    perspective: 1000px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.carousel-wrapper button {
+    position: relative;
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+}
+.watch {
+    position: absolute;
+    width: clamp(200px, 48vw, 600px);
+    top: 90%;
+    left: 50%;
+
+    transition:
+        transform 1s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 1s ease;
+
+}
+
+/* Middle watch */
+.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;
+    animation: 3s ease-in-out infinite;
+}
+
+/* Left watch */
+.left {
+    transform: translate(-100%, -50%) rotateY(35deg) scale(0.35);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+/* Right watch */
+.right {
+    transform: translate(0%, -50%) rotateY(-35deg) scale(0.35);
+    opacity: 0.5;
+    z-index: 2;
+}
+
+button{
+    padding:12px 20px;
+    cursor:pointer;
+    border-radius: 50px;
+    top: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.description_container {
+    max-width: 650px;
+    width: 100%;
+    left: 10%;
+    position: relative;
+    padding: 0 1rem;
+}
+#title {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(2rem, 5vw, 70px);
+    font-weight: lighter;
+    text-align: left;      /* was: justify */
+    margin-top: 20px;
+}
+
+#desc {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(1rem, 1.3vw, 20px);
+    font-weight: lighter;
+    text-align: left;      /* was: justify */
+    margin-top: 10px;
+}
+
+.shop_now {
+    
+    background-color: #000000;
+    color: #fff;
+    border:#fff 2px solid;
+}
+
+.shop_now:hover {
+    background-color: #fff;
+    color: #000000;
+    border:#000000 2px solid;
+
+}
+/* Animation for the rotate effect */
+.rotate {
+    animation: carouselSpin 1s ease;
+}
+
+.rotate-back {
+    animation: carouselSpinBack 1s ease;
+}
+
+
+@keyframes carouselSpin {
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(-25deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+
+@keyframes carouselSpinBack {
+
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(25deg);
+    }
+
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+
+
+
+
+
+/* brand section */
+
+.section_title{
+    font-family: "Michroma", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #ccc;
+    font-weight: bolder;
+    margin-bottom: 1.5rem;
+}
+.brand-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden; /* keeps the video edge-to-edge, matching the hero section */
+}
+
+#brand-movie {
+    position: absolute;
+    top: -15%;
+    left: 0;
+    width: 100%;
+    height: 130%; /* extra height gives the parallax shift room to move without exposing edges */
+    object-fit: cover;
+    will-change: transform;
+}
+
+.brand-overlay {
+    position: absolute;
+    top: 50%;
+    right: 8%;
+    justify-content: center;
+    transform: translateY(-50%);
+    width: 420px;
+    max-width: 40%;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
+
+.brand-overlay p {
+    font-size: 1.25rem;
+    justify-content: flex-start;
+    text-align: left;
+    font-weight: 100;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.brand-overlay .brand-tagline {
+    font-family: "Michroma", sans-serif;
+    font-size: 1.0rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.brand-overlay .brand-eyebrow {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+/* product section */
+.product-section {
+    background-color: #f7f7f7;
+    padding: 6rem 0;
+}
+
+.product-section-title {
+    font-family: "Michroma", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: #050505;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.product-section-title.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-row {
+    --bs-gutter-x: 2rem;
+    row-gap: 100px;
+}
+
+.product-card {
+    text-align: center;
+    color: #050505;
+    border: 3px solid #ffffff;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px rgb(235, 235, 235);
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.product-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-row .col-6:nth-child(1) .product-card { transition-delay: 0s; }
+.product-row .col-6:nth-child(2) .product-card { transition-delay: 0.15s; }
+.product-row .col-6:nth-child(3) .product-card { transition-delay: 0.3s; }
+.product-row .col-6:nth-child(4) .product-card { transition-delay: 0.45s; }
+
+.see-more-wrapper {
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.see-more-btn {
+    background-color: #050505;
+    color: #fff;
+    border: 2px solid #050505;
+    padding: 0.75rem 2.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.see-more-btn:hover {
+    background-color: #fff;
+    color: #050505;
+}
+
+.product-img {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.4s ease;
+    
+}
+
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+
+.product-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    font-weight: 300;
+    color: #252525;
+    margin-bottom: 0;
+}
+
+/* details section */
+.details {
+    background-color: #050505;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.details-title {
+    font-family: "Michroma", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-top: 4rem;
+    margin-bottom: 0;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.details-title.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.details-inner {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 6rem 3rem;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas:
+        "tl clock tr"
+        "bl clock br";
+    align-items: center;
+    justify-items: center;
+    column-gap: 4rem;
+    row-gap: 3rem;
+}
+
+.clock-wrapper {
+    grid-area: clock;
+    position: relative;
+    width: min(480px, 60vw);
+    aspect-ratio: 1 / 1;
+
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 1s ease, transform 1s ease;
+    transition-delay: 0.2s;
+}
+
+.clock-wrapper.in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.corner-text {
+    max-width: 260px;
+    text-align: center;
+    color: #fff;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.corner-text.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.corner-top-left { grid-area: tl; transition-delay: 0s; }
+.corner-top-right { grid-area: tr; transition-delay: 0.15s; }
+.corner-bottom-left { grid-area: bl; transition-delay: 0.3s; }
+.corner-bottom-right { grid-area: br; transition-delay: 0.45s; }
+
+.corner-icon {
+    display: block;
+    font-size: 1.75rem;
+    color: #b08d57;
+    margin-bottom: 0.75rem;
+}
+
+.corner-title {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.corner-desc {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #ccc;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .details-inner {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "clock"
+            "tl"
+            "tr"
+            "bl"
+            "br";
+        row-gap: 2.5rem;
+        padding: 5rem 1.5rem;
+    }
+
+    .clock-wrapper {
+        width: min(400px, 80vw);
+    }
+}
+
+.analog-clock {
+    width: 100%;
+    height: 100%;
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background: radial-gradient(circle, #141414 0%, #000 100%);
+}
+
+.clock-marker {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 2px;
+    height: 44%;
+    transform-origin: 50% 100%;
+}
+
+.clock-marker::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 4px;
+    height: 12px;
+    background: #ccc;
+}
+
+.clock-marker.major::before {
+    left: -1.5px;
+    width: 5px;
+    height: 18px;
+    background: #fff;
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    border-radius: 4px;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 24%;
+    margin-left: -3px;
+    background: #fff;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 34%;
+    margin-left: -2px;
+    background: #ccc;
+}
+
+.second-hand {
+    width: 2px;
+    height: 40%;
+    margin-left: -1px;
+    background: #b08d57; /* gold accent */
+}
+
+.clock-center-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    background: #b08d57;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+/* review section */
+.review_section {
+    background-color: #f5f5f5;
+    padding: 6rem 0;
+}
+
+.review-section-title {
+    font-family: "Michroma", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: #050505;
+    text-align: center;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.review-section-title.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.review-row {
+    row-gap: 2.5rem;
+}
+
+.review-card {
+    height: 100%;
+    text-align: center;
+    border: 3px solid #ffffff;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px rgb(235, 235, 235);
+    padding: 2.5rem 2rem;
+
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.review-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.review-row .col-md-4:nth-child(1) .review-card { transition-delay: 0s; }
+.review-row .col-md-4:nth-child(2) .review-card { transition-delay: 0.15s; }
+.review-row .col-md-4:nth-child(3) .review-card { transition-delay: 0.3s; }
+.review-row .col-md-4:nth-child(4) .review-card { transition-delay: 0s; }
+.review-row .col-md-4:nth-child(5) .review-card { transition-delay: 0.15s; }
+.review-row .col-md-4:nth-child(6) .review-card { transition-delay: 0.3s; }
+
+.review-stars {
+    color: #b08d57;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 1.25rem;
+}
+
+.review-quote {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.review-name {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #050505;
+    margin-bottom: 0;
+}
+
+/* newsletter / CTA section */
+.newsletter-section {
+    position: relative;
+    background-color: #050505;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.newsletter-section .container {
+    width: 100%;
+}
+
+#newsletter-movie {
+    position: absolute;
+    top: -30%;
+    left: 0;
+    width: 100%;
+    height: 160%; /* extra height gives the stronger parallax shift room to move without exposing edges */
+    object-fit: cover;
+    will-change: transform;
+}
+
+.newsletter-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.newsletter-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.newsletter-title {
+    font-family: "Michroma", sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.newsletter-subtext {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+    font-weight: 300;
+    color: #ccc;
+    max-width: 500px;
+    margin: 0 auto 2.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-input {
+    flex: 1 1 260px;
+    background-color: transparent;
+    border: 1px solid #fcfbfb;
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #b08d57;
+}
+
+.newsletter-input::placeholder {
+    color: #888;
+}
+
+.newsletter-btn {
+    background-color: #b08d57;
+    color: #050505;
+    border: 1px solid #b08d57;
+    padding: 0.75rem 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    background-color: transparent;
+    color: #b08d57;
+}
+
+/* footer */
+.site-footer {
+    background-color: #050505;
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr repeat(4, 1fr);
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.footer-brand-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: "Michroma", sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    color: #fff;
+}
+
+.footer-logo {
+    height: 28px;
+    width: auto;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1.1rem;
+}
+
+.footer-social a {
+    color: #ccc;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #b08d57;
+}
+
+.footer-col-title {
+    font-family: "Michroma", sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.footer-col a {
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 0.6rem;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #b08d57;
+}
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.footer-copyright {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #888;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-brand-col {
+        grid-column: span 2;
+    }
+}

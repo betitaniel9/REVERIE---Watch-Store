@@ -32,21 +32,30 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link " aria-current="page" href="#">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
+                        <a class="nav-link" href="#collection">Collection</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#shop">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#reviews">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <!-- Background Video-->
         <div>
             <video autoplay muted loop playsinline id="bg-movie">
@@ -61,7 +70,7 @@
         </div>
     </section>
 
-    <section class="feature-section">
+    <section class="feature-section" id="collection">
         <div class="container">
             <h2 class="feature-section-title">SIGNATURE COLLECTION</h2>
 
@@ -88,7 +97,7 @@
         </div>
     </section>
 
-    <section class="brand-section">
+    <section class="brand-section" id="about">
 
         <div class="container">
             <video autoplay muted loop playsinline id="brand-movie">
@@ -111,7 +120,7 @@
         </div>
     </section>
 
-    <section class="product-section">
+    <section class="product-section" id="shop">
         <div class="container">
             <h2 class="product-section-title">PRODUCTS</h2>
 
@@ -193,7 +202,7 @@
       </div>
     </section>
 
-    <section class="review_section">
+    <section class="review_section" id="reviews">
         <div class="container">
             <h2 class="review-section-title">WHAT OUR CUSTOMERS SAY</h2>
 
@@ -302,7 +311,7 @@
         </div>
     </section>
 
-    <footer class="site-footer">
+    <footer class="site-footer" id="contact">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand-col">
@@ -365,8 +374,6 @@
     const brandSection = document.querySelector('.brand-section');
 
     const mainNav = document.getElementById('main-nav');
-    const productSection = document.querySelector('.product-section');
-    const reviewSection = document.querySelector('.review_section');
 
     const detailsSection = document.querySelector('.details');
     const clockFace = document.getElementById('clock-face');
@@ -374,24 +381,21 @@
     const newsletterMovie = document.getElementById('newsletter-movie');
     const newsletterSection = document.querySelector('.newsletter-section');
 
+    // Navbar: transparent at the very top, solid black once the page is scrolled
+    function updateNav() {
+        const scrolled = window.scrollY > 10;
+
+        mainNav.classList.toggle('bg-transparent', !scrolled);
+        mainNav.classList.toggle('nav-solid-dark', scrolled);
+    }
+
+    updateNav();
+
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
         const heroHeight = heroSection.offsetHeight;
 
-        // black navbar only while the product or review sections are behind it
-        const navHeight = mainNav.offsetHeight;
-        const productRect = productSection.getBoundingClientRect();
-        const reviewRect = reviewSection.getBoundingClientRect();
-        const overProduct = productRect.top <= navHeight && productRect.bottom > 0;
-        const overReview = reviewRect.top <= navHeight && reviewRect.bottom > 0;
-
-        if (overProduct || overReview) {
-            mainNav.classList.remove('navbar-dark', 'bg-transparent');
-            mainNav.classList.add('navbar-dark', 'bg-black');
-        } else {
-            mainNav.classList.remove('navbar-dark', 'bg-black');
-            mainNav.classList.add('navbar-dark', 'bg-transparent');
-        }
+        updateNav();
 
         // only run the effect while the hero is in view (perf + avoids drift)
         if (scrollY < heroHeight) {

@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* nav links land below the fixed navbar */
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
@@ -6,7 +11,6 @@ body {
 .navbar {
     padding: 0.5rem 1.25rem;
     min-height: 70px;
-    transition: background-color 0.3s ease;
 }
 
 .navbar .container-fluid {
@@ -56,6 +60,15 @@ body {
     justify-content: flex-end;
 }
 
+/* Solid navbar states, toggled on scroll (see updateNav in index.html) */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.nav-solid-dark {
+    background-color: #000;
+}
+
 @media (min-width: 0px) {
 
     .navbar-collapse {
@@ -64,6 +77,32 @@ body {
 
     .navbar-toggler {
         display: none;
+    }
+
+}
+
+/* small screens: tighten the links so all of them fit instead of spilling off-screen */
+@media (max-width: 767.98px) {
+
+    .navbar {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .navbar-brand img {
+        height: 36px;
+    }
+
+    .navbar-nav {
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.7rem;
+        letter-spacing: 0.04em;
+        height: auto;
+        padding: 0.25rem 0;
     }
 
 }
@@ -82,13 +121,6 @@ body {
     object-fit: cover;
     z-index: -1;
     will-change: transform; /* smoother animation */
-}
-
-.navbar-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
 }
 
 .overlay-content {
